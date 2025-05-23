@@ -1,54 +1,49 @@
+// src/hooks/useSound.tsx
 import { useRef, useCallback } from 'react';
 
 export const useSound = () => {
-  const quizCompletedSoundRef = useRef<HTMLAudioElement | null>(null);
-  const offerSoundRef = useRef<HTMLAudioElement | null>(null);
-  const clickSoundRef = useRef<HTMLAudioElement | null>(null);
+  const quizCompletedRef = useRef<HTMLAudioElement | null>(null);
+  const successRef = useRef<HTMLAudioElement | null>(null);
+  const clickRef = useRef<HTMLAudioElement | null>(null);
 
   const initializeSounds = useCallback(() => {
-    if (!quizCompletedSoundRef.current) {
-      quizCompletedSoundRef.current = new Audio('/sounds/quiz-completed.mp3');
-      quizCompletedSoundRef.current.volume = 0.6;
+    if (!quizCompletedRef.current) {
+      quizCompletedRef.current = new Audio('/sounds/quiz-completed.mp3');
+      quizCompletedRef.current.volume = 0.6;
     }
-
-    if (!offerSoundRef.current) {
-      offerSoundRef.current = new Audio('/sounds/offer-special.mp3');
-      offerSoundRef.current.volume = 0.6;
+    if (!successRef.current) {
+      successRef.current = new Audio('/sounds/success.mp3');
+      successRef.current.volume = 0.5;
     }
-
-    if (!clickSoundRef.current) {
-      clickSoundRef.current = new Audio('/sounds/click.mp3');
-      clickSoundRef.current.volume = 0.4;
+    if (!clickRef.current) {
+      clickRef.current = new Audio('/sounds/success.mp3');
+      clickRef.current.volume = 0.4;
     }
   }, []);
 
   const playQuizCompletedSound = useCallback(() => {
     initializeSounds();
-    if (quizCompletedSoundRef.current) {
-      quizCompletedSoundRef.current.currentTime = 0;
-      quizCompletedSoundRef.current.play().catch(console.log);
+    if (quizCompletedRef.current) {
+      quizCompletedRef.current.currentTime = 0;
+      quizCompletedRef.current.play().catch(console.log);
     }
   }, [initializeSounds]);
 
-  const playOfferSound = useCallback(() => {
+  const playSuccessSound = useCallback(() => {
     initializeSounds();
-    if (offerSoundRef.current) {
-      offerSoundRef.current.currentTime = 0;
-      offerSoundRef.current.play().catch(console.log);
+    if (successRef.current) {
+      successRef.current.currentTime = 0;
+      successRef.current.play().catch(console.log);
     }
   }, [initializeSounds]);
 
   const playClickSound = useCallback(() => {
     initializeSounds();
-    if (clickSoundRef.current) {
-      clickSoundRef.current.currentTime = 0;
-      clickSoundRef.current.play().catch(console.log);
+    if (clickRef.current) {
+      clickRef.current.currentTime = 0;
+      clickRef.current.play().catch(console.log);
     }
   }, [initializeSounds]);
 
-  return {
-    playQuizCompletedSound,
-    playOfferSound,
-    playClickSound,
-  };
+  return { playQuizCompletedSound, playSuccessSound, playClickSound };
 };
