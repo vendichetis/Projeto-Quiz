@@ -47,7 +47,7 @@ export const useSound = () => {
 
   return {
     playOfferSound,       // quiz-completed.mp3 — Som da oferta final
-    playSuccessSound,     // success.mp3 — Som de bonificação
+    playSuccessSound,     // quiz-completed.mp3 — Som de bonificação
     playClickSound        // success.mp3 — Som de clique
   };
 };
