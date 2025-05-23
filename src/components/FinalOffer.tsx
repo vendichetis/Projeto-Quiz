@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PetMascot from './PetMascot';
 import { useSound } from '../hooks/useSound';
@@ -12,11 +11,10 @@ const FinalOffer: React.FC<FinalOfferProps> = ({ totalEarned, onClaim }) => {
   const { playSuccessSound, playClickSound } = useSound();
 
   React.useEffect(() => {
-    // Tocar som de sucesso quando a oferta aparece
     const timer = setTimeout(() => {
       playSuccessSound();
     }, 500);
-    
+
     return () => clearTimeout(timer);
   }, [playSuccessSound]);
 
@@ -50,7 +48,7 @@ const FinalOffer: React.FC<FinalOfferProps> = ({ totalEarned, onClaim }) => {
       <div className="max-w-3xl mx-auto relative z-10 text-center">
         {/* Happy mascot */}
         <div className="mb-8">
-          <PetMascot isHappy={true} size="large" />
+          <PetMascot isHappy={true} size="large" className="max-h-48 mx-auto" />
         </div>
 
         {/* Main congratulations */}
@@ -58,7 +56,7 @@ const FinalOffer: React.FC<FinalOfferProps> = ({ totalEarned, onClaim }) => {
           <h1 className="text-4xl font-bold text-gray-800 mb-6">
             🎉 Parabéns! Você completou o Quiz Pet do Futuro! 🎉
           </h1>
-          
+
           <div className="bg-green-100 p-6 rounded-xl border-2 border-green-300 mb-6">
             <div className="flex items-center justify-center space-x-2 mb-2">
               <span className="text-4xl">💰</span>
