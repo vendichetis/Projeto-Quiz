@@ -2,7 +2,7 @@
 import { useRef, useCallback } from 'react';
 
 export const useSound = () => {
-  const quizCompletedRef = useRef<HTMLAudioElement | null>(null);  // som da oferta final
+  const quizCompletedRef = useRef<HTMLAudioElement | null>(null);
   const successRef = useRef<HTMLAudioElement | null>(null);
   const clickRef = useRef<HTMLAudioElement | null>(null);
 
@@ -16,7 +16,7 @@ export const useSound = () => {
       successRef.current.volume = 0.5;
     }
     if (!clickRef.current) {
-      clickRef.current = new Audio('/sounds/click.mp3');  // corrigi aqui para um som de click próprio
+      clickRef.current = new Audio('/sounds/success.mp3');
       clickRef.current.volume = 0.4;
     }
   }, []);
