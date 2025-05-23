@@ -2,38 +2,38 @@
 import { useRef, useCallback } from 'react';
 
 export const useSound = () => {
-  const quizCompletedRef = useRef<HTMLAudioElement | null>(null);  // som da oferta final
-  const successRef = useRef<HTMLAudioElement | null>(null);
-  const clickRef = useRef<HTMLAudioElement | null>(null);
+  const offerRef = useRef<HTMLAudioElement | null>(null);         // quiz-completed.mp3 → som da oferta final
+  const bonusRef = useRef<HTMLAudioElement | null>(null);         // success.mp3 → som de bonificação
+  const clickRef = useRef<HTMLAudioElement | null>(null);         // som de clique
 
   const initializeSounds = useCallback(() => {
-    if (!quizCompletedRef.current) {
-      quizCompletedRef.current = new Audio('/sounds/quiz-completed.mp3');
-      quizCompletedRef.current.volume = 0.6;
+    if (!offerRef.current) {
+      offerRef.current = new Audio('/sounds/quiz-completed.mp3');
+      offerRef.current.volume = 0.6;
     }
-    if (!successRef.current) {
-      successRef.current = new Audio('/sounds/success.mp3');
-      successRef.current.volume = 0.5;
+    if (!bonusRef.current) {
+      bonusRef.current = new Audio('/sounds/success.mp3');
+      bonusRef.current.volume = 0.5;
     }
     if (!clickRef.current) {
-      clickRef.current = new Audio('/sounds/click.mp3');  // corrigi aqui para um som de click próprio
+      clickRef.current = new Audio('/sounds/click.mp3');
       clickRef.current.volume = 0.4;
     }
   }, []);
 
-  const playQuizCompletedSound = useCallback(() => {
+  const playOfferSound = useCallback(() => {
     initializeSounds();
-    if (quizCompletedRef.current) {
-      quizCompletedRef.current.currentTime = 0;
-      quizCompletedRef.current.play().catch(console.log);
+    if (offerRef.current) {
+      offerRef.current.currentTime = 0;
+      offerRef.current.play().catch(console.log);
     }
   }, [initializeSounds]);
 
-  const playSuccessSound = useCallback(() => {
+  const playBonusSound = useCallback(() => {
     initializeSounds();
-    if (successRef.current) {
-      successRef.current.currentTime = 0;
-      successRef.current.play().catch(console.log);
+    if (bonusRef.current) {
+      bonusRef.current.currentTime = 0;
+      bonusRef.current.play().catch(console.log);
     }
   }, [initializeSounds]);
 
@@ -45,5 +45,9 @@ export const useSound = () => {
     }
   }, [initializeSounds]);
 
-  return { playQuizCompletedSound, playSuccessSound, playClickSound };
+  return {
+    playOfferSound,   // toca quiz-completed.mp3 (oferta final)
+    playBonusSound,   // toca success.mp3 (bonificação)
+    playClickSound    // toca click.mp3 (clique)
+  };
 };
