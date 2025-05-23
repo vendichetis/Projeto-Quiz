@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PetMascot from '../components/PetMascot';
 import QuizQuestion from '../components/QuizQuestion';
@@ -68,7 +67,6 @@ const Index = () => {
 
   const handleAnswer = (answer: string) => {
     setEarnedMoney(prev => prev + 10);
-    
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(prev => prev + 1);
     } else {
@@ -77,7 +75,6 @@ const Index = () => {
   };
 
   const handleClaimOffer = () => {
-    // Simulate WhatsApp redirect
     const message = encodeURIComponent(
       `Olá! Acabei de completar o Quiz Pet do Futuro e ganhei R$100 em bônus! Quero garantir minha página profissional por R$97. Vamos conversar? 🐾`
     );
@@ -104,7 +101,7 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto text-center relative z-10">
+        <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col justify-center min-h-screen pt-16">
           {/* Main mascot */}
           <div className="mb-8">
             <PetMascot isHappy={true} size="large" />
@@ -115,7 +112,7 @@ const Index = () => {
             <h1 className="text-4xl font-bold text-gray-800 mb-6">
               Olá! 🐶 Bem-vindo ao Quiz Pet do Futuro!
             </h1>
-            
+
             <div className="text-lg text-gray-700 space-y-4 mb-6">
               <p>
                 Estamos selecionando petshops para um projeto especial: <strong>"Petshops do Futuro"</strong>
