@@ -12,7 +12,7 @@ export const useSound = () => {
       offerRef.current.volume = 1.0;
     }
     if (!successRef.current) {
-      successRef.current = new Audio('/sounds/success.mp3');
+      successRef.current = new Audio('/quiz-completed.mp3');
       successRef.current.volume = 0.5;
     }
     if (!clickRef.current) {
