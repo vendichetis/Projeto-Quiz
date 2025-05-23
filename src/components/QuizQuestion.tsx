@@ -26,25 +26,35 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({
   const { playCashSound, playClickSound } = useSound();
 
   const handleAnswer = (answer: string) => {
-    if (isAnswering) return; // Prevent double clicks
+    console.log('handleAnswer called with:', answer);
+    console.log('Current state - isAnswering:', isAnswering, 'showResult:', showResult);
+    
+    if (isAnswering) {
+      console.log('Prevented double click');
+      return;
+    }
     
     setIsAnswering(true);
     setSelectedAnswer(answer);
     setShowResult(true);
     
-    // Play click sound immediately
+    console.log('Playing click sound...');
     playClickSound();
     
-    // Play cash sound after a short delay
+    // Tocar som de cash após um delay menor
     setTimeout(() => {
+      console.log('Playing cash sound...');
       playCashSound();
-    }, 500);
+    }, 300);
     
-    // Move to next question after 1.5 seconds
+    // Avançar para próxima pergunta mais rapidamente
     setTimeout(() => {
+      console.log('Moving to next question...');
       onAnswer(answer);
       setIsAnswering(false);
-    }, 1500);
+      setShowResult(false);
+      setSelectedAnswer('');
+    }, 1200);
   };
 
   return (
