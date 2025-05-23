@@ -1,4 +1,3 @@
-// src/hooks/useSound.tsx
 import { useRef, useCallback } from 'react';
 
 export const useSound = () => {
@@ -8,11 +7,11 @@ export const useSound = () => {
 
   const initializeSounds = useCallback(() => {
     if (!offerRef.current) {
-      offerRef.current = new Audio('/sounds/success.mp3');
+      offerRef.current = new Audio('/sounds/quiz-completed.mp3');
       offerRef.current.volume = 1.0;
     }
     if (!successRef.current) {
-      successRef.current = new Audio('/success.mp3');
+      successRef.current = new Audio('/sounds/quiz-completed.mp3');
       successRef.current.volume = 0.5;
     }
     if (!clickRef.current) {
@@ -46,8 +45,8 @@ export const useSound = () => {
   }, [initializeSounds]);
 
   return {
-    playOfferSound,       // quiz-completed.mp3 — Som da oferta final
-    playSuccessSound,     // quiz-completed.mp3 — Som de bonificação
-    playClickSound        // success.mp3 — Som de clique
+    playOfferSound,
+    playSuccessSound,
+    playClickSound
   };
 };
