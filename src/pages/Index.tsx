@@ -78,7 +78,7 @@ const Index = () => {
     const message = encodeURIComponent(
       `Olá! Acabei de completar o Quiz Pet do Futuro e ganhei R$100 em bônus! Quero garantir minha página profissional por R$97. Vamos conversar? 🐾`
     );
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5548991219648?text=${message}`, '_blank');
   };
 
   if (currentStep === 'intro') {
