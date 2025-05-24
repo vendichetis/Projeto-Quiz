@@ -139,7 +139,7 @@ const Index = () => {
               onClick={handleStartQuiz}
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-2xl font-bold py-6 px-12 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
-              🎉 Começar Quiz! 🎉
+               Começar Quiz! 
             </button>
           </div>
 
