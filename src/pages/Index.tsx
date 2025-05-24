@@ -129,7 +129,7 @@ const Index = () => {
               </div>
               <div className="text-gray-700 space-y-2">
                 <p>• Responda 10 perguntas rápidas sobre seu petshop</p>
-                <p>• Ganhe R$10 fictícios a cada resposta</p>
+                <p>• Ganhe R$10 a cada resposta</p>
                 <p>• Acumule até R$100 em bônus</p>
                 <p>• Receba uma oferta especial no final! 🎁</p>
               </div>
