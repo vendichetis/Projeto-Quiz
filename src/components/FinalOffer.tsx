@@ -101,7 +101,8 @@ const FinalOffer: React.FC<FinalOfferProps> = ({ totalEarned, onClaim }) => {
         {/* Mensagem de parabéns */}
         <div className="bg-white rounded-3xl shadow-2xl p-8 mb-8 border-4 border-yellow-400 animate-fade-in">
           <h1 className="text-4xl font-bold text-gray-800 mb-6">
-            🎉 Parabéns! Você concluiu o Quiz Pet do Futuro! 🎉
+            🎉  Parabéns! Você desbloqueou sua Recompensa Exclusiva! 🎉
+ 
           </h1>
 
           {/* Valor acumulado */}
@@ -117,7 +118,7 @@ const FinalOffer: React.FC<FinalOfferProps> = ({ totalEarned, onClaim }) => {
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl border-2 border-blue-300 mb-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">🚀 Oferta Exclusiva Para Você!</h2>
             <p className="text-lg text-gray-700 mb-4">
-              Receba sua <strong>Página Profissional</strong> personalizada para petshop!
+              Receba sua <strong>Página Profissional</strong> com 50% OFF
             </p>
             <div className="flex items-center justify-center space-x-4 mb-4">
               <span className="text-xl text-gray-500 line-through">De R$ 197</span>
@@ -153,7 +154,8 @@ const FinalOffer: React.FC<FinalOfferProps> = ({ totalEarned, onClaim }) => {
             onClick={handleClaimClick}
             className="bg-gradient-to-r from-green-500 to-blue-600 text-white text-2xl font-bold py-6 px-12 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 animate-pulse"
           >
-            🐾 Quero minha página por R$97! 🐾
+            🐾 Quero garantir minha página agora! 🐾
+ 
           </button>
 
           <p className="text-sm text-gray-600 mt-4">
