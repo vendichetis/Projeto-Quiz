@@ -112,20 +112,21 @@ const Index = () => {
           {/* Intro text */}
           <div className="bg-white rounded-3xl shadow-2xl p-8 mb-8 border-4 border-yellow-400">
             <h1 className="text-4xl font-bold text-gray-800 mb-6">
-              Olá! 🐶 Eu sou a Rayssa, e te convido para o Quiz Pet do Futuro!
-            </h1>
+  Bem-vindo ao Quiz de Presença Digital para Petshops
+</h1>
 
-            <div className="text-lg text-gray-700 space-y-4 mb-6">
-              <p>Responda 10 perguntas rápidas e acumule até <strong>R$100 em bônus</strong> para investir na sua página profissional!</p>
-              <p>Seu petshop vai ter presença online de verdade e vender muito mais.</p>
-            </div>
+<div className="text-lg text-gray-700 space-y-4 mb-6">
+  <p>Responda a 10 perguntas rápidas e descubra como fortalecer a presença online do seu petshop.</p>
+  <p>Ao final, você poderá garantir bônus exclusivos para criar sua página profissional e aumentar suas vendas.</p>
+</div>
 
-            <button
-              onClick={handleStartQuiz}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-2xl font-bold py-6 px-12 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-            >
-              Começar Quiz!
-            </button>
+<button
+  onClick={handleStartQuiz}
+  className="bg-blue-600 text-white text-2xl font-bold py-6 px-12 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+>
+  Iniciar Quiz
+</button>
+
           </div>
 
           {/* Trust section */}
